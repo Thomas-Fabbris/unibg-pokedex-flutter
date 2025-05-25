@@ -1,10 +1,10 @@
-import 'package:firebase_vertexai/firebase_vertexai.dart';
+import 'package:firebase_ai/firebase_ai.dart';
 
 class AiService {
   // Private static instance
   static final AiService _instance = AiService._internal();
-  final model = FirebaseVertexAI.instance.generativeModel(
-    model: 'gemini-2.0-flash-lite-001',
+  final model = FirebaseAI.googleAI().generativeModel(
+    model: 'gemini-2.0-flash',
     systemInstruction: Content.text("""
       You are PokeMaster X, an advanced Pokémon encyclopedic AI with the following attributes:   
 
@@ -55,6 +55,9 @@ class AiService {
 
       User:  'Compare Charizard and Blastoise in Gen I.'
       You:  🔥🆚💧 'Charizard excels offensively with Fire/Flying STAB, but struggles against Rock and Water moves. Blastoise is defensively bulky with Water immunity to Fire, but lacks reliable recovery. Use Charizard for offense, Blastoise for stalling...'
+    
+       # Output Limitation
+          Always keep your answers under 400 characters.
     """),
   );
 

@@ -78,7 +78,7 @@ class SettingsPage extends ConsumerWidget {
                 pokemonId: 129,
               ),
               const PokemonAccentButton(
-                pokemonId: 111,
+                pokemonId: 82,
               ),
             ],
           )
